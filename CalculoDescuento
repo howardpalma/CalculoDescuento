@@ -1,0 +1,58 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.calculodescuento;
+
+/**
+ *
+ * @author Howard
+ */
+public class CalculoDescuento {
+    
+    // Método que calcula el descuento con porcentaje personalizado
+    public static double calcularDescuento(double montoTotal, double porcentajeDescuento) {
+        return montoTotal * (porcentajeDescuento / 100);
+    }
+    
+    // Método sobrecargado con descuento por defecto del 10%
+    public static double calcularDescuento(double montoTotal) {
+        return calcularDescuento(montoTotal, 10.0);
+    }
+    
+    public static void main(String[] args) {
+        // Ejemplo 1: Usando descuento por defecto del 10%
+        double monto1 = 500.0;
+        double descuento1 = calcularDescuento(monto1);
+        double montoFinal1 = monto1 - descuento1;
+        
+        System.out.println("=== DESCUENTO POR DEFECTO (10%) ===");
+        System.out.println("Monto total: $" + monto1);
+        System.out.println("Descuento aplicado: $" + descuento1);
+        System.out.println("Monto final a pagar: $" + montoFinal1);
+        System.out.println();
+        
+        // Ejemplo 2: Usando descuento personalizado del 15%
+        double monto2 = 800.0;
+        double porcentajeDescuento = 15.0;
+        double descuento2 = calcularDescuento(monto2, porcentajeDescuento);
+        double montoFinal2 = monto2 - descuento2;
+        
+        System.out.println("=== DESCUENTO PERSONALIZADO (" + porcentajeDescuento + "%) ===");
+        System.out.println("Monto total: $" + monto2);
+        System.out.println("Porcentaje de descuento: " + porcentajeDescuento + "%");
+        System.out.println("Descuento aplicado: $" + descuento2);
+        System.out.println("Monto final a pagar: $" + montoFinal2);
+        System.out.println();
+        
+        // Ejemplo adicional con otro porcentaje
+        double monto3 = 1200.0;
+        double descuento3 = calcularDescuento(monto3, 25.0);
+        double montoFinal3 = monto3 - descuento3;
+        
+        System.out.println("=== DESCUENTO ADICIONAL (25%) ===");
+        System.out.println("Monto total: $" + monto3);
+        System.out.println("Descuento aplicado: $" + descuento3);
+        System.out.println("Monto final a pagar: $" + montoFinal3);
+    }
+}
